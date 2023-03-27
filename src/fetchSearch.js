@@ -1,5 +1,5 @@
-async function fetchSearch({ queryKey }) {
-  const [animal, location, breed] = queryKey[1];
+const fetchSearch = async ({ queryKey }) => {
+  const { animal, location, breed } = queryKey[1];
 
   const res = await fetch(
     `https://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
@@ -10,6 +10,6 @@ async function fetchSearch({ queryKey }) {
   }
 
   return res.json();
-}
+};
 
 export default fetchSearch;
